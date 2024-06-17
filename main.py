@@ -25,6 +25,9 @@ def main():
     #     cv2.imwrite(f'output_videos/cropped_image.jpg', cropped_image)
     #     break
 
+    # Interpolate Ball Positions
+    tracks["ball"] = tracker.interpolate_ball_positions(tracks["ball"])
+
     # Assign Player Teams
     team_assigner = TeamAssigner()
     team_assigner.assign_team_color(video_frames[0],
